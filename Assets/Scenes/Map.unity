@@ -25,7 +25,7 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.6018156, g: 0.8679245, b: 0.8419522, a: 1}
   m_AmbientIntensity: 6.16
   m_AmbientMode: 3
-  m_SubtractiveShadowColor: {r: 1, g: 1, b: 1, a: 1}
+  m_SubtractiveShadowColor: {r: 0.028301895, g: 0.028301895, b: 0.028301895, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: c1c961cbd00909b45b34d97fd7df5cbf, type: 2}
   m_HaloStrength: 0.534
   m_FlareStrength: 1
@@ -35,7 +35,7 @@ RenderSettings:
   m_DefaultReflectionMode: 1
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 1
+  m_ReflectionIntensity: 0.429
   m_CustomReflection: {fileID: 8900000, guid: b4503954fd147c94180872808dde9eb3, type: 3}
   m_Sun: {fileID: 762804177}
   m_UseRadianceAmbientProbe: 0
@@ -13004,7 +13004,7 @@ MonoBehaviour:
   walkingSpeed: 3
   sprintingSpeedIncrease: 4
   crouchSpeed: 1
-  jumpForce: 2000
+  jumpForce: 500
   feetCheck: {fileID: 505794505}
   headCheck: {fileID: 1267508405}
   playerCamera: {fileID: 292791661}
