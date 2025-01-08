@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9914ca1e5c1cb8e4cbf67d3e95b8184f, type: 3}
+  m_Name: Shotgun 2
+  m_EditorClassIdentifier: 
+  model: {fileID: 7252578800071090066, guid: 10c9c84a9c3cf164f9c2c0b80e61ef40, type: 3}
+  animator: {fileID: 9100000, guid: 4ebb1f96a90a6f04880eb743a14e7b39, type: 2}
+  allLayers:
+    serializedVersion: 2
+    m_Bits: 5631
+  damage: 2
+  range: 150
+  bulletsPerShot: 15
+  spray: 0.1
+  shootCooldown: 0.5
+  magazineSize: 15
+  particles: {fileID: 4837796100309896629, guid: 1f16b8d8a28b44644ae2a4fbc53e3ca0, type: 3}
+  shakeSettings:
+    magnitude: 15
+    roughness: 5
+    fadeIn: 0.5
+    fadeOut: 0.1
+  sound: Shotgun_Shoot

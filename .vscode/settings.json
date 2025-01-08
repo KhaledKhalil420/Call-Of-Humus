@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Call Of Poly Black Humus.sln"
+    "dotnet.defaultSolution": "Call-Of-Humus.sln"
 }
