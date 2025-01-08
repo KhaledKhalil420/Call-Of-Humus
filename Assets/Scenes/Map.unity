@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 95386a651667d334db73080709cae01b, type: 2}
+  m_LightingDataAsset: {fileID: 0}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 71d4d6fe0ff24f841a1c68087211b5ba, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -1100,7 +1100,7 @@ Transform:
   m_GameObject: {fileID: 101294944}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12497,7 +12497,7 @@ MonoBehaviour:
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 1
-  m_Antialiasing: 0
+  m_Antialiasing: 1
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
@@ -12557,7 +12557,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 200
+  far clip plane: 120
   field of view: 85
   orthographic: 0
   orthographic size: 5
@@ -13083,7 +13083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ed75316f80dc94a83c8e1567f7d75b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldWeapon: {fileID: 11400000, guid: 898bd540ff96d5744866635fc5795f9d, type: 2}
+  heldWeapon: {fileID: 11400000, guid: 41e0cf79677a1aa48b308c04b7e6e164, type: 2}
   storedWeapons:
   - {fileID: 11400000, guid: ede7cc6f16ccc254c99e9ee3d4577372, type: 2}
   pivot: {fileID: 395542964}
@@ -18346,7 +18346,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1168095818}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14651cd72e5b04a4db3299e085122eec, type: 3}
   m_Name: 
@@ -18429,8 +18429,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 6e3bf9981dc022a4ea946323711810a5, type: 2}
-  m_audioClip: {fileID: 8300000, guid: f9a938addd0980140a8737806c9c9862, type: 3}
-  m_Resource: {fileID: 8300000, guid: f9a938addd0980140a8737806c9c9862, type: 3}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0
   m_Pitch: 1
@@ -34793,8 +34793,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 6e3bf9981dc022a4ea946323711810a5, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 0bb90cd302e84184e95e22458503208f, type: 3}
-  m_Resource: {fileID: 8300000, guid: 0bb90cd302e84184e95e22458503208f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 31e68757a05579f41912e18092a28b5f, type: 3}
+  m_Resource: {fileID: 8300000, guid: 31e68757a05579f41912e18092a28b5f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
