@@ -13083,11 +13083,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ed75316f80dc94a83c8e1567f7d75b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldWeapon: {fileID: 11400000, guid: 41e0cf79677a1aa48b308c04b7e6e164, type: 2}
+  heldWeapon: {fileID: 11400000, guid: ede7cc6f16ccc254c99e9ee3d4577372, type: 2}
   storedWeapons:
   - {fileID: 11400000, guid: ede7cc6f16ccc254c99e9ee3d4577372, type: 2}
-  - {fileID: 11400000, guid: 41e0cf79677a1aa48b308c04b7e6e164, type: 2}
-  - {fileID: 11400000, guid: 898bd540ff96d5744866635fc5795f9d, type: 2}
   pivot: {fileID: 395542964}
   animator: {fileID: 101294946}
   canShoot: 1
@@ -18431,8 +18429,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 6e3bf9981dc022a4ea946323711810a5, type: 2}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: f9a938addd0980140a8737806c9c9862, type: 3}
+  m_Resource: {fileID: 8300000, guid: f9a938addd0980140a8737806c9c9862, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0
   m_Pitch: 1
@@ -34795,8 +34793,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 6e3bf9981dc022a4ea946323711810a5, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 31e68757a05579f41912e18092a28b5f, type: 3}
-  m_Resource: {fileID: 8300000, guid: 31e68757a05579f41912e18092a28b5f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0bb90cd302e84184e95e22458503208f, type: 3}
+  m_Resource: {fileID: 8300000, guid: 0bb90cd302e84184e95e22458503208f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
