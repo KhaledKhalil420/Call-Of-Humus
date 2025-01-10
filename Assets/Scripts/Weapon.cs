@@ -5,6 +5,8 @@ public class Weapon : ScriptableObject
     public GameObject model;
     public RuntimeAnimatorController animator;
     public LayerMask allLayers;
+    public string itemName;
+    public Sprite sprite;
 
     public virtual void TriggerWeapon(Transform cam, Animator animator, float speedIncrease)
     {

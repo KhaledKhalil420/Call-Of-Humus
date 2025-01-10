@@ -17,6 +17,8 @@ MonoBehaviour:
   allLayers:
     serializedVersion: 2
     m_Bits: 5631
+  itemName: ShotgunLight
+  sprite: {fileID: 0}
   damage: 15
   range: 150
   bulletsPerShot: 4

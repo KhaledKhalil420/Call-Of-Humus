@@ -85,6 +85,7 @@ MonoBehaviour:
     weaponType: 0
     health: 15
     pointWorth: 30
+    oneShotCrit: 0
     bodyCollider: {fileID: 3944506576111568521}
     headCollider: {fileID: 4507813450512701323}
     ballsCollider: {fileID: 2627765768454288097}

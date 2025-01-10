@@ -51,6 +51,10 @@ public class ParentEnemyAI : MonoBehaviour, IDamagable
         // Handle damage multipliers
         if (collider == settings.headCollider || collider == settings.ballsCollider)
         {
+            if(settings.oneShotCrit)
+            settings.health -= damage * 100;
+
+            else
             settings.health -= damage * 4;
         }
         else
@@ -107,6 +111,7 @@ public class EnemySettings
     [Header("Health settings")]
     public float health;
     public float pointWorth = 30;
+    public bool oneShotCrit = false;
 
     [Header("Body Parts")]
     public Collider bodyCollider;

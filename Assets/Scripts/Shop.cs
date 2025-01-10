@@ -33,7 +33,7 @@ public class Shop : MonoBehaviour, IInteractable
     {
         ItemDisplay display = Instantiate(imageDisplay.gameObject, group).GetComponent<ItemDisplay>();
 
-        display.UpdateDisplay(purchasableItems[num].sprite, purchasableItems[num].price.ToString());
+        display.UpdateDisplay(purchasableItems[num].weapon.sprite, purchasableItems[num].price.ToString());
         display.purchasableItem = purchasableItems[num];
         display.playerManager = PlayerManager.instance;
     }

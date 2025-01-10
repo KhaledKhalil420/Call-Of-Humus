@@ -12,11 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63619302b054698449dee9c48839c9a6, type: 3}
   m_Name: Katana
   m_EditorClassIdentifier: 
-  model: {fileID: 919132149155446097, guid: b45eb52659ebc6f48bcd8acbaec04947, type: 3}
-  animator: {fileID: 9100000, guid: 68b19da3749cbb348802e5f6fd6b1686, type: 2}
+  model: {fileID: 6702981374398401054, guid: 049486ab4570e884f97140167eb81416, type: 3}
+  animator: {fileID: 9100000, guid: 06aaf139527c71e449c779c2ea81e0e2, type: 2}
+  allLayers:
+    serializedVersion: 2
+    m_Bits: 7679
+  itemName: Knife
+  sprite: {fileID: 0}
   damage: 5
   range: 5
-  coolDown: 0.3
+  coolDown: 1
   settings:
     magnitude: 1
     roughness: 1

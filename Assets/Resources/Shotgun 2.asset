@@ -17,6 +17,8 @@ MonoBehaviour:
   allLayers:
     serializedVersion: 2
     m_Bits: 5631
+  itemName: Shotgun
+  sprite: {fileID: 21300000, guid: e9754da09cb21b84eb80ddc83ed8140e, type: 3}
   damage: 2
   range: 150
   bulletsPerShot: 15
