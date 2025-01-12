@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -11,6 +12,8 @@ public class PlayerManager : MonoBehaviour
     internal float localPlayerMoney = 0;
 
     public GUI gui;
+
+    public Gun[] guns;
 
     public void LockPlayer()
     {
@@ -57,5 +60,8 @@ public class PlayerManager : MonoBehaviour
         players = GameObject.FindGameObjectsWithTag("Player").ToList();   
 
         Debug.Log(GetClosestPlayer(transform.position).name);
+
+        guns = Resources.LoadAll<Gun>("");
+        Array.ForEach(guns, gun => gun.InitializeRuntimeData());
     }
 }

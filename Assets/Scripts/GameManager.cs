@@ -74,7 +74,6 @@ public class GameManager : MonoBehaviour
         // Wait until all enemies are killed
         while (spawnedEnemies > 0)
         {
-            Debug.Log("Waiting for enemies to be killed...");
             yield return null;
         }
     }

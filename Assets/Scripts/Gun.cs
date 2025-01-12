@@ -10,39 +10,49 @@ public class Gun : Weapon
     public int bulletsPerShot;
     public float spray;
     public float shootCooldown;
-    
-    public int magazineSize;
-    private float nextTimeToShoot;
-    private int currentAmmo;
+    public float reloadTime = 1;
 
+    public int magazineSize;
+    public int maxAmmo;
     public GameObject particles;
-    private bool canShoot;
 
     public CameraShakeSettings shakeSettings;
-    public string sound = "ShootSoundName";
+    public string shootSound = "ShootSoundName";
+    public string reloadSound = "ReloadSoundName";
 
-    private void OnEnable()
+    private float nextTimeToShoot;
+    internal GunRuntimeData runtimeData;
+
+    public void InitializeRuntimeData()
     {
-        currentAmmo = magazineSize;
-        canShoot = true;
+        // Only initialize if runtimeData is null
+        if (runtimeData == null)
+        {
+            runtimeData = new GunRuntimeData(magazineSize);
+        }
+        
+        runtimeData.currentAmmo = magazineSize;
+        nextTimeToShoot = 0;
     }
 
     public override void TriggerWeapon(Transform cam, Animator anim, float speedIncrease)
     {
-        if (canShoot)
+        if(!runtimeData.isReloading && runtimeData.currentAmmo > 0)
         {
-            nextTimeToShoot = Time.time + shootCooldown;
-
-            for (int i = 0; i < bulletsPerShot; i++)
+            if (Time.time >= nextTimeToShoot)
             {
-                Shoot(cam);
-            }
+                nextTimeToShoot = Time.time + shootCooldown;
 
-            currentAmmo--;
-            anim.SetTrigger("Shoot");
-            AudioManager.instance.PlaySound(sound, 1, 1.3f);
-            CoroutineRunner.Coroutines.StartCoroutine(CoolDown(speedIncrease));
-            CameraShaker.Instance.ShakeOnce(shakeSettings.magnitude, shakeSettings.roughness, shakeSettings.fadeIn, shakeSettings.fadeOut);
+                for (int i = 0; i < bulletsPerShot; i++)
+                {
+                    Shoot(cam);
+                }
+
+                runtimeData.currentAmmo--;
+                anim.SetTrigger("Shoot");
+                AudioManager.instance.PlaySound(shootSound, 1, 1.3f);
+                CameraShaker.Instance.ShakeOnce(shakeSettings.magnitude, shakeSettings.roughness, shakeSettings.fadeIn, shakeSettings.fadeOut);
+            }
         }
     }
 
@@ -54,20 +64,47 @@ public class Gun : Weapon
             Random.Range(-spray, spray)
         );
 
-        RaycastHit hit;
-        if (Physics.Raycast(cam.position, shootDirection, out hit, range, allLayers))
+        if (Physics.Raycast(cam.position, shootDirection, out RaycastHit hit, range, allLayers))
         {
             Instantiate(particles, hit.point, Quaternion.identity);
 
-            if(hit.collider.TryGetComponent(out IDamagable damagable))
+            if (hit.collider.TryGetComponent(out IDamagable damagable))
+            {
                 damagable.Damage(damage, hit.collider, 1);
+            }
         }
     }
 
-    public IEnumerator CoolDown(float speedIncrease)
+    public void StartReloading(Animator anim)
     {
-        canShoot = false;
-        yield return new WaitForSeconds(shootCooldown / speedIncrease);
-        canShoot = true;
+        InitializeRuntimeData();
+
+        if (runtimeData.isReloading || runtimeData.currentAmmo == magazineSize) return;
+
+        runtimeData.isReloading = true;
+        anim.SetTrigger("Reload");
+        AudioManager.instance.PlaySound(reloadSound, 1, 1.2f);
+    }
+
+    public void FinishReloading()
+    {
+        InitializeRuntimeData();
+
+        
+
+        runtimeData.isReloading = false;
+    }
+}
+
+[System.Serializable]
+public class GunRuntimeData
+{
+    public int currentAmmo;
+    public bool isReloading;
+
+    public GunRuntimeData(int magazineSize)
+    {
+        currentAmmo = magazineSize; // Set to magazine size initially
+        isReloading = false;
     }
 }
