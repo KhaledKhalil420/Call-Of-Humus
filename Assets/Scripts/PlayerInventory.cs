@@ -85,11 +85,6 @@ public class PlayerInventory : MonoBehaviour
     {
         if (index < 0 || index >= storedWeapons.Count) return;
 
-        if (heldWeapon is Gun currentGun)
-        {
-            currentGun.FinishReloading();
-        }
-
         heldWeapon = storedWeapons[index];
         UpdateWeaponGraphically();
     }
