@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d6592a1f16475b42acfdad1875c94c2, type: 3}
   m_Name: Ak 47
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 6fe875d5895c96f43a442ee9ee5806b3, type: 3}
   weapon: {fileID: 11400000, guid: 898bd540ff96d5744866635fc5795f9d, type: 2}
-  price: 150
+  price: 1500

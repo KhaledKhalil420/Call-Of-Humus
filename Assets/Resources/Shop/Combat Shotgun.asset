@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d6592a1f16475b42acfdad1875c94c2, type: 3}
   m_Name: Combat Shotgun
   m_EditorClassIdentifier: 
-  sprite: {fileID: 192748073, guid: 51046d7341b9bcc45add8b62873ace0a, type: 3}
   weapon: {fileID: 11400000, guid: 41e0cf79677a1aa48b308c04b7e6e164, type: 2}
-  price: 500
+  price: 3000
