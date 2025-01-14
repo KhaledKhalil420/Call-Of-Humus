@@ -20951,7 +20951,7 @@ MonoBehaviour:
   waveBreak: 15
   spawnedEnemies: 0
   loopWaves: 1
-  gui: {fileID: 0}
+  gui: {fileID: 1032209028}
 --- !u!114 &1168095820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20965,10 +20965,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   players: []
-  localPlayer: {fileID: 0}
-  gui: {fileID: 0}
+  localPlayer: {fileID: 1110248212}
+  gui: {fileID: 1032209028}
   guns: []
-  hitMarkerAniamtor: {fileID: 0}
+  hitMarkerAniamtor: {fileID: 1092726537}
 --- !u!4 &1168095821
 Transform:
   m_ObjectHideFlags: 0
