@@ -11,8 +11,8 @@ public class Gun : Weapon
     public float spray;
     public float shootCooldown;
     public float reloadTime = 1;
+    private bool canShoot = true;
 
-    public int magazineSize;
     public int maxAmmo;
     public GameObject particles;
 
@@ -20,7 +20,6 @@ public class Gun : Weapon
     public string shootSound = "ShootSoundName";
     public string reloadSound = "ReloadSoundName";
 
-    private float nextTimeToShoot;
     internal GunRuntimeData runtimeData;
 
     public void InitializeRuntimeData()
@@ -28,21 +27,19 @@ public class Gun : Weapon
         // Only initialize if runtimeData is null
         if (runtimeData == null)
         {
-            runtimeData = new GunRuntimeData(magazineSize);
+            runtimeData = new GunRuntimeData(maxAmmo);
         }
         
-        runtimeData.currentAmmo = magazineSize;
-        nextTimeToShoot = 0;
+        runtimeData.currentAmmo = maxAmmo;
+        canShoot = true;
     }
 
     public override void TriggerWeapon(Transform cam, Animator anim, float speedIncrease)
     {
         if(!runtimeData.isReloading && runtimeData.currentAmmo > 0)
         {
-            if (Time.time >= nextTimeToShoot)
+            if (canShoot)
             {
-                nextTimeToShoot = Time.time + shootCooldown;
-
                 for (int i = 0; i < bulletsPerShot; i++)
                 {
                     Shoot(cam);
@@ -52,9 +49,20 @@ public class Gun : Weapon
                 anim.SetTrigger("Shoot");
                 AudioManager.instance.PlaySound(shootSound, 1, 1.3f);
                 CameraShaker.Instance.ShakeOnce(shakeSettings.magnitude, shakeSettings.roughness, shakeSettings.fadeIn, shakeSettings.fadeOut);
+                CoroutineRunner.Coroutines.StartCoroutine(GetReadyToShoot());
             }
         }
     }
+
+    public IEnumerator GetReadyToShoot()
+    {
+        canShoot = false;
+        yield return new WaitForSeconds(shootCooldown);
+        canShoot = true;
+    }
+
+
+    
 
     private void Shoot(Transform cam)
     {
@@ -79,11 +87,9 @@ public class Gun : Weapon
     {
         InitializeRuntimeData();
 
-        if (runtimeData.isReloading || runtimeData.currentAmmo == magazineSize) return;
+        if (runtimeData.isReloading || runtimeData.currentAmmo == maxAmmo) return;
 
         runtimeData.isReloading = true;
-        anim.SetTrigger("Reload");
-        AudioManager.instance.PlaySound(reloadSound, 1, 1.2f);
     }
 
     public void FinishReloading()

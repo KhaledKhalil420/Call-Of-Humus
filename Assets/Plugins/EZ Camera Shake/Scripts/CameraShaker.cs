@@ -181,3 +181,10 @@ namespace EZCameraShake
         }
     }
 }
+
+
+[System.Serializable]
+public class CameraShakerPreset
+{
+    public float magnitude, roughness, fadeInTime, fadeOutTime;
+}

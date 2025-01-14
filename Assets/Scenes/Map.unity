@@ -1572,7 +1572,7 @@ MonoBehaviour:
   m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 0
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 0
@@ -1642,7 +1642,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
+  m_AllowDynamicResolution: 1
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -7524,21 +7524,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RenderShadows: 0
-  m_RequiresDepthTextureOption: 0
-  m_RequiresOpaqueTextureOption: 0
+  m_RequiresDepthTextureOption: 1
+  m_RequiresOpaqueTextureOption: 1
   m_CameraType: 0
   m_Cameras: []
-  m_RendererIndex: 0
+  m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
+  m_StopNaN: 1
+  m_Dithering: 1
   m_ClearDepth: 1
   m_AllowXRRendering: 1
   m_AllowHDROutput: 1
@@ -7565,7 +7565,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -7586,7 +7586,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: -68.1
+  near clip plane: -0.92
   far clip plane: 50
   field of view: 60
   orthographic: 1
@@ -7603,7 +7603,7 @@ Camera:
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 0
+  m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!114 &192558401
@@ -8118,7 +8118,7 @@ MonoBehaviour:
   m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 4294967295
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 1
@@ -8168,7 +8168,7 @@ Camera:
   m_ShutterSpeed: 0.005
   m_Aperture: 16
   m_FocusDistance: 10
-  m_FocalLength: 50
+  m_FocalLength: 13.095703
   m_BladeCount: 5
   m_Curvature: {x: 2, y: 11}
   m_BarrelClipping: 0.25
@@ -8196,7 +8196,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
+  m_AllowDynamicResolution: 1
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -8796,41 +8796,14 @@ MonoBehaviour:
   regenTime: 5
   regenspeed: 1
   knockbackTolerance: 0
-  damagedEffect: {fileID: 1227026666}
-  damageEffectCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0.9779637
-      outSlope: 0.9779637
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.84165955
-      value: 0.8231125
-      inSlope: -2.1102037
-      outSlope: -2.1102037
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: -3.578167
-      outSlope: -3.578167
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.23333335
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  effectDuration: 2
+  damagePreset:
+    magnitude: 15
+    roughness: 25
+    fadeInTime: 0.1
+    fadeOutTime: 0.5
+  lowPassFilter: {fileID: 292791662}
+  healthEffect: {fileID: 1227026666}
+  healthVignette: {fileID: 0}
   gui: {fileID: 434116377}
 --- !u!114 &363879337
 MonoBehaviour:
@@ -8844,7 +8817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ed75316f80dc94a83c8e1567f7d75b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldWeapon: {fileID: 11400000, guid: ede7cc6f16ccc254c99e9ee3d4577372, type: 2}
+  heldWeapon: {fileID: 11400000, guid: 898bd540ff96d5744866635fc5795f9d, type: 2}
   storedWeapons:
   - {fileID: 11400000, guid: ede7cc6f16ccc254c99e9ee3d4577372, type: 2}
   pivot: {fileID: 395542964}
@@ -19149,14 +19122,14 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 292791666}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -19905,6 +19878,7 @@ GameObject:
   - component: {fileID: 920805887}
   - component: {fileID: 920805886}
   - component: {fileID: 920805885}
+  - component: {fileID: 920805888}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -19925,6 +19899,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 409329480}
+  - {fileID: 1520957623}
   m_Father: {fileID: 101294945}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -19995,6 +19970,28 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!95 &920805888
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920805883}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3711e0aaa3e5bcc4ea8766431f02a297, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &940866047
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21490,6 +21487,7 @@ MonoBehaviour:
   localPlayer: {fileID: 0}
   gui: {fileID: 434116377}
   guns: []
+  hitMarkerAniamtor: {fileID: 920805888}
 --- !u!4 &1168095821
 Transform:
   m_ObjectHideFlags: 0
@@ -22442,6 +22440,22 @@ MonoBehaviour:
       Source: {fileID: 0}
       Mixer: {fileID: 24300002, guid: 6e3bf9981dc022a4ea946323711810a5, type: 2}
       Clip: {fileID: 8300000, guid: 401e85554b5bd6445a75e56f444807da, type: 3}
+    - SoundName: Enemy_Headshot
+      Loop: 0
+      PlayOnAwake: 0
+      Volume: 0.7
+      Pitch: 1
+      Source: {fileID: 0}
+      Mixer: {fileID: 24300002, guid: 6e3bf9981dc022a4ea946323711810a5, type: 2}
+      Clip: {fileID: 8300000, guid: b661d3f0d41967f4cae36f4500d841dd, type: 3}
+    - SoundName: Gun_Reload
+      Loop: 0
+      PlayOnAwake: 0
+      Volume: 1
+      Pitch: 1
+      Source: {fileID: 0}
+      Mixer: {fileID: 24300002, guid: 6e3bf9981dc022a4ea946323711810a5, type: 2}
+      Clip: {fileID: 8300000, guid: 9c5eaec365109fc4a91190be625bbaa9, type: 3}
   startFadeIn: 1
   DefaultAudioMixer: {fileID: 24300002, guid: 6e3bf9981dc022a4ea946323711810a5, type: 2}
   destroyOnSceneLoad: 0
@@ -38346,6 +38360,81 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5789023325157284357, guid: dab3d93fd2764dc45988adf7d412c1b3, type: 3}
   m_PrefabInstance: {fileID: 1476626475}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1520957622
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1520957623}
+  - component: {fileID: 1520957625}
+  - component: {fileID: 1520957624}
+  m_Layer: 5
+  m_Name: Image (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1520957623
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520957622}
+  m_LocalRotation: {x: -0, y: -0, z: -0.7071064, w: 0.70710725}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 7.8418, y: 7.8418, z: 7.8418}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 920805884}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 5, y: 5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1520957624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520957622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 039d5d05f71f2ee4e97dc9745abde6df, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1520957625
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520957622}
+  m_CullTransparentMesh: 1
 --- !u!1 &1529237533 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b7f587477f6b1e04b8ce1eae2e2bbc86, type: 3}

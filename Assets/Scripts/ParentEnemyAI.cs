@@ -45,21 +45,24 @@ public class ParentEnemyAI : MonoBehaviour, IDamagable
     {
         if (isDead) return;
 
-        // Play damage sound
-        AudioManager.instance.PlaySound("Enemy_Damage");
 
         // Handle damage multipliers
         if (collider == settings.headCollider || collider == settings.ballsCollider)
         {
+            
             if(settings.oneShotCrit)
             settings.health -= damage * 100;
 
             else
             settings.health -= damage * 4;
+
+            AudioManager.instance.PlaySound("Enemy_Headshot");
+            PlayerManager.instance.TriggerHitMarker();
         }
         else
         {
             settings.health -= damage;
+            AudioManager.instance.PlaySound("Enemy_Damage");
         }
 
         // Trigger death if health is depleted

@@ -173,7 +173,12 @@ public class PlayerMovement : MonoBehaviour
     void HandleMovement()
     {
         // Allowing movement in the air by applying horizontal forces
+
+        if(isGrounded)
         rb.linearVelocity = new Vector3(movingDirection.x * currentVelocity, rb.linearVelocity.y, movingDirection.z * currentVelocity);
+
+        else if(!isGrounded)
+        rb.linearVelocity = new Vector3(movingDirection.x * currentVelocity * 1.75f, rb.linearVelocity.y, movingDirection.z * currentVelocity * 1.75f);
     }
 
     #endregion

@@ -14,6 +14,7 @@ public class PlayerManager : MonoBehaviour
     public GUI gui;
 
     public Gun[] guns;
+    public Animator hitMarkerAniamtor;
 
     public void LockPlayer()
     {
@@ -63,5 +64,10 @@ public class PlayerManager : MonoBehaviour
 
         guns = Resources.LoadAll<Gun>("");
         Array.ForEach(guns, gun => gun.InitializeRuntimeData());
+    }
+
+    public void TriggerHitMarker()
+    {
+        hitMarkerAniamtor.SetTrigger("Trigger");
     }
 }

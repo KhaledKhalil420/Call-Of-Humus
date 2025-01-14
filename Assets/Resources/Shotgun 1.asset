@@ -24,11 +24,13 @@ MonoBehaviour:
   bulletsPerShot: 4
   spray: 0.15
   shootCooldown: 1
-  magazineSize: 15
+  reloadTime: 1
+  maxAmmo: 5
   particles: {fileID: 4837796100309896629, guid: 1f16b8d8a28b44644ae2a4fbc53e3ca0, type: 3}
   shakeSettings:
     magnitude: 10
     roughness: 5
     fadeIn: 0.5
     fadeOut: 0.1
-  sound: Shotgun_Shoot
+  shootSound: ShootSoundName
+  reloadSound: ReloadSoundName

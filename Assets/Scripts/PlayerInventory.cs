@@ -27,8 +27,8 @@ public class PlayerInventory : MonoBehaviour
 
     private void LateUpdate()
     {
-        UpdateUI();
         Inputs();
+        UpdateUI();
     }
 
     void UpdateUI()
@@ -96,6 +96,7 @@ public class PlayerInventory : MonoBehaviour
         float reloadTime = gun.reloadTime / speedIncrease;
         Vector3 originalPosition = holder.localPosition;
         Vector3 loweredPosition = originalPosition + Vector3.down * 3f;
+        AudioManager.instance.PlaySound("Gun_Reload");
 
         Debug.Log("Reload");
 
