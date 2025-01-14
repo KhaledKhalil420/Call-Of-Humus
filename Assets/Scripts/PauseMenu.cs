@@ -59,10 +59,7 @@ public class PauseMenu : MonoBehaviour
     //Save Values On Change
     public void Save()
     {
-        PlayerPrefs.SetFloat("sensitivty", sensitivtySlider.value);
-        PlayerPrefs.SetFloat("master", masterSlider.value);
-        PlayerPrefs.SetFloat("music", musicSlider.value);
-        PlayerPrefs.SetInt("Graphics", graphicsDropdown.value);
+        
     }
     
     //Load UI Values
@@ -70,13 +67,10 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 0;
 
-        sensitivtySlider.value = PlayerPrefs.GetFloat("sensitivty");
-        masterSlider.value = PlayerPrefs.GetFloat("master");
-        musicSlider.value = PlayerPrefs.GetFloat("music");   
-        graphicsDropdown.value = PlayerPrefs.GetInt("Graphics", graphicsDropdown.value);  
-
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+
+        LoadUiValues();
 
         playerLook.disableLook = true;
         playerInventory.canShoot = false;
@@ -96,12 +90,20 @@ public class PauseMenu : MonoBehaviour
         LoadValues();
     }
 
+    private void LoadUiValues()
+    {
+        sensitivtySlider.value = PlayerPrefs.GetFloat("sensitivty");
+        masterSlider.value = PlayerPrefs.GetFloat("Master");
+        musicSlider.value = PlayerPrefs.GetFloat("Music");   
+        graphicsDropdown.value = PlayerPrefs.GetInt("Graphics");  
+    }
+
     //Load References Values
     public void LoadValues()
     {
-        playerLook.Sensitivity = PlayerPrefs.GetFloat("sensitivty");
-        masterGroup.audioMixer.SetFloat("Volume", PlayerPrefs.GetFloat("master"));
-        musicGroup.audioMixer.SetFloat("Volume", PlayerPrefs.GetFloat("music"));
-        QualitySettings.SetQualityLevel(PlayerPrefs.GetInt("Graphics", graphicsDropdown.value)); 
+        playerLook.Sensitivity = sensitivtySlider.value;
+        masterGroup.audioMixer.SetFloat("Volume", masterSlider.value);
+        musicGroup.audioMixer.SetFloat("Volume", musicSlider.value);
+        QualitySettings.SetQualityLevel(graphicsDropdown.value); 
     }
 }

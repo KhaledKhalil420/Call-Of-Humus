@@ -7767,7 +7767,7 @@ MonoBehaviour:
   m_MinValue: 1
   m_MaxValue: 50
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 25
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -8817,7 +8817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ed75316f80dc94a83c8e1567f7d75b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldWeapon: {fileID: 11400000, guid: 898bd540ff96d5744866635fc5795f9d, type: 2}
+  heldWeapon: {fileID: 11400000, guid: ede7cc6f16ccc254c99e9ee3d4577372, type: 2}
   storedWeapons:
   - {fileID: 11400000, guid: ede7cc6f16ccc254c99e9ee3d4577372, type: 2}
   pivot: {fileID: 395542964}
@@ -11587,7 +11587,7 @@ MonoBehaviour:
   m_MinValue: -80
   m_MaxValue: 0
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: -25
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -19353,7 +19353,7 @@ MonoBehaviour:
   m_MinValue: -80
   m_MaxValue: 0
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: -25
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -21442,7 +21442,7 @@ MonoBehaviour:
     - {fileID: 690338516}
     - {fileID: 195272531}
     enemiesToSpawn: 15
-    spawnSpeed: 0.5
+    spawnSpeed: 1
   - enemies:
     - {fileID: 4492381233360529906, guid: 2d8827a054892b84697ebf421def0671, type: 3}
     spawnPoints:
