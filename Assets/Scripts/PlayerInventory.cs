@@ -126,7 +126,7 @@ public class PlayerInventory : MonoBehaviour
 
     void Interact()
     {
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit, 2f, LayerMask.GetMask("Interactable")))
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit, 8f, LayerMask.GetMask("Interactable")))
         {
             if (hit.collider.TryGetComponent(out IInteractable interactable))
             {
