@@ -86,7 +86,7 @@ public class PlayerHealth : MonoBehaviour, IDamagable
         //Death
         if (currentHp <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            PlayerManager.instance.TriggerPlayerDeath();
         }
     }
 }

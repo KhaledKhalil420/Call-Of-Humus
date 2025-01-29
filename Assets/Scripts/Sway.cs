@@ -3,28 +3,38 @@ using UnityEngine;
 public class Sway : MonoBehaviour
 {
     [Header("Sway Settings")]
-    [SerializeField] private float smooth;
-    [SerializeField] private float multiplier;
-    private Quaternion initializedRotation;
+    [SerializeField] private float smooth = 5f;
+    [SerializeField] private float multiplier = 1f;
+
+    private Vector2 mouseInput;
+    private Vector3 initializedEulerAngles;
 
     private void Start()
     {
-        initializedRotation = transform.rotation;
+        // Cache the initial localEulerAngles
+        initializedEulerAngles = transform.localEulerAngles;
+    }
+
+    private void Update()
+    {
+        // Cache mouse input in Update
+        mouseInput.x = Input.GetAxis("Mouse X") * multiplier;
+        mouseInput.y = Input.GetAxis("Mouse Y") * multiplier;
     }
 
     private void LateUpdate()
     {
-        // get mouse input
-        float mouseX = Input.GetAxis("Mouse X") * multiplier * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * multiplier * Time.deltaTime;
+        // Skip calculations if there's no input
+        if (mouseInput == Vector2.zero) return;
 
-        // calculate target rotation
-        Quaternion rotationX = Quaternion.AngleAxis(-mouseY, Vector3.right);
-        Quaternion rotationY = Quaternion.AngleAxis(mouseX, Vector3.up);
-        
-        Quaternion targetRotation = rotationX * rotationY * initializedRotation;
+        // Calculate target euler angles
+        Vector3 targetEulerAngles = new Vector3(
+            initializedEulerAngles.x - mouseInput.y,
+            initializedEulerAngles.y + mouseInput.x,
+            initializedEulerAngles.z
+        );
 
-        // rotate 
-        transform.localRotation = Quaternion.Lerp(transform.localRotation, targetRotation, smooth * Time.smoothDeltaTime);
+        // Smoothly interpolate rotation
+        transform.localEulerAngles = Vector3.Lerp(transform.localEulerAngles, targetEulerAngles, smooth * Time.deltaTime);
     }
 }

@@ -6,7 +6,7 @@ public class ItemDisplay : MonoBehaviour
 {
     public Image image;
     public TMP_Text text;
-    internal bool canBuy;
+    internal bool canBuy = true;
     internal PurchasableItem purchasableItem;
 
     internal PlayerManager playerManager;
@@ -19,7 +19,7 @@ public class ItemDisplay : MonoBehaviour
 
     public void Purchase()
     {
-        if (playerManager.localPlayerMoney >= purchasableItem.price)
+        if (canBuy && playerManager.localPlayerMoney >= purchasableItem.price)
         {
             playerManager.ChangeMoney(-purchasableItem.price);
             playerManager.localPlayer.GetComponent<PlayerInventory>().storedWeapons.Add(purchasableItem.weapon);
@@ -27,6 +27,9 @@ public class ItemDisplay : MonoBehaviour
             playerManager.localPlayer.GetComponent<PlayerInventory>().UpdateWeaponGraphically();
 
             AudioManager.instance.PlaySound("Buy", 1, 1.1f);
+
+            GetComponent<Button>().interactable = false;
+            canBuy = false;
         }
     }
 }

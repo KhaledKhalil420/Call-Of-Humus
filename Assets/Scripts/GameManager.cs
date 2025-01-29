@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public event EventHandler<bool> OnWaveTriggered;
     public int spawnedEnemies;
 
-    private int currentWaveIndex = 0;
+    internal int currentWaveIndex = 0;
 
     public bool loopWaves = false;
 
@@ -39,8 +39,8 @@ public class GameManager : MonoBehaviour
         while (currentWaveIndex < waves.Count)
         {
             // Update GUI
-            gui.TriggerWaveText(currentWaveIndex + 1);
-            gui.UpdateWaveText(currentWaveIndex + 1);
+            gui.TriggerWaveText(currentWaveIndex.ToString() + 1);
+            gui.UpdateWaveText(currentWaveIndex.ToString() + 1);
 
             // Trigger wave start
             OnWaveTriggered?.Invoke(this, true);
@@ -56,7 +56,10 @@ public class GameManager : MonoBehaviour
             currentWaveIndex++;
 
             // Wave break before next wave
+            gui.UpdateWaveText("Survived");
+            gui.TriggerWaveText("Survived");
             Debug.Log("Wave break!");
+
             yield return new WaitForSeconds(waveBreak);
         }
 

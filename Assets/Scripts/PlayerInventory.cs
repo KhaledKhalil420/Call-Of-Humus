@@ -1,9 +1,7 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerInventory : MonoBehaviour
 {
@@ -18,11 +16,17 @@ public class PlayerInventory : MonoBehaviour
 
     public bool canShoot = true;
     public TMP_Text ammoText;
+    public TMP_Text interactText;
 
     private void Awake()
     {
         instance = this;
         UpdateWeaponGraphically();
+    }
+    
+    private void FixedUpdate()
+    {
+        Interact();
     }
 
     private void LateUpdate()
@@ -42,9 +46,6 @@ public class PlayerInventory : MonoBehaviour
     void Inputs()
     {
         if (!canShoot) return;
-
-        // Weapon interaction
-        if (Input.GetKeyDown(KeyCode.E)) Interact();
 
         if (heldWeapon == null) return;
 
@@ -130,9 +131,16 @@ public class PlayerInventory : MonoBehaviour
         {
             if (hit.collider.TryGetComponent(out IInteractable interactable))
             {
+                interactText.enabled = true;
+
+                if(Input.GetKeyDown(KeyCode.E))
                 interactable.Interact(gameObject);
             }
+
+            return;
         }
+
+        interactText.enabled = false;
     }
 
     #endregion

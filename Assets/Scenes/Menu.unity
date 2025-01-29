@@ -33856,7 +33856,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 9e1ec564505b9334290bbdee4670db8d, type: 3}
   m_Resource: {fileID: 8300000, guid: 9e1ec564505b9334290bbdee4670db8d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -36703,6 +36703,8 @@ MonoBehaviour:
   parent: {fileID: 0}
   group: {fileID: 0}
   volume: {fileID: 0}
+  skinnedRen: {fileID: 0}
+  animator: {fileID: 0}
   purchasableItems: []
 --- !u!1001 &1982180533
 PrefabInstance:

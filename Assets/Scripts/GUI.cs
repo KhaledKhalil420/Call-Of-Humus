@@ -12,13 +12,13 @@ public class GUI : MonoBehaviour
     public TMP_Text waveTextAnim;
     public Animator anim;
 
-    public void TriggerWaveText(int wave)
+    public void TriggerWaveText(string wave)
     {
         waveTextAnim.text = "Wave: " + wave;
         anim.SetTrigger("Play");
     }
 
-    public void UpdateWaveText(float waveIncrease)
+    public void UpdateWaveText(string waveIncrease)
     {
         waveText.text = "Wave: " + waveIncrease;
     }

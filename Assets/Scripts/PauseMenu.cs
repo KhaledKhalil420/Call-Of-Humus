@@ -1,11 +1,9 @@
-using TMPro;
 using UnityEngine;
-using UnityEngine.Audio;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+
 
 public class PauseMenu : MonoBehaviour
 {
+    public static PauseMenu instance;
     public bool isPaused = false;
 
     [Header("UI Elements")] // UI Elements
@@ -15,8 +13,14 @@ public class PauseMenu : MonoBehaviour
     public PlayerLook playerLook;
     public PlayerInventory playerInventory;
 
+    private void Awake()
+    {
+        instance = this;
+    }
+
     private void Update()
     {
+        if(!PlayerManager.isPlayerDead)
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             Trigger();
@@ -39,13 +43,13 @@ public class PauseMenu : MonoBehaviour
     //Load UI Values
     public void PauseGame()
     {
-        Time.timeScale = 0;
+        Time.timeScale = 0.00000001f;
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        playerLook.disableLook = true;
-        playerInventory.canShoot = false;
+        PlayerManager.instance.LockPlayer();
+        playerLook.enabled = false;
     }
 
     //Resume
@@ -56,7 +60,7 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        playerLook.disableLook = false;
-        playerInventory.canShoot = true;
+        PlayerManager.instance.UnlockPlayer();
+        playerLook.enabled = true;
     }
 }
