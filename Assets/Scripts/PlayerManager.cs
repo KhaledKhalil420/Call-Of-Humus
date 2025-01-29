@@ -88,14 +88,15 @@ public class PlayerManager : MonoBehaviour
 
     public void Restart()
     {
-        StartCoroutine(nameof(ResetartScene));
+        StartCoroutine(ResetartScene());
     }
 
-    private IEnumerable ResetartScene()
+    public IEnumerator ResetartScene()
     {
         fadeAnimator.Play("Fade");
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSecondsRealtime(1);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1;
         isPlayerDead = false;
     }
 
