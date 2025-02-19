@@ -23,7 +23,7 @@ MonoBehaviour:
   range: 450
   bulletsPerShot: 1
   spray: 0.01
-  shootCooldown: 0.45
+  shootCooldown: 0.3
   reloadTime: 0.5
   maxAmmo: 15
   particles: {fileID: 4837796100309896629, guid: 1f16b8d8a28b44644ae2a4fbc53e3ca0, type: 3}

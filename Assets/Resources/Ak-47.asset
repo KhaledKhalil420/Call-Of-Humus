@@ -19,11 +19,11 @@ MonoBehaviour:
     m_Bits: 7679
   itemName: Ak
   sprite: {fileID: 21300000, guid: 3d9bc93251389264480373ff3b8d6edf, type: 3}
-  damage: 1
+  damage: 2
   range: 450
   bulletsPerShot: 1
   spray: 0.1
-  shootCooldown: 0.1
+  shootCooldown: 0.07
   reloadTime: 1
   maxAmmo: 60
   particles: {fileID: 4837796100309896629, guid: 1f16b8d8a28b44644ae2a4fbc53e3ca0, type: 3}
@@ -34,3 +34,6 @@ MonoBehaviour:
     fadeOut: 0.1
   shootSound: 
   reloadSound: Gun_Reload
+  penetratingShots: 1
+  maxPenetrations: 2
+  sprayIncreaseRate: 15

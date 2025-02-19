@@ -13,6 +13,7 @@ public class SaveSettings
     public float Quality;
     public float RenderScale;
     public float SfxVol;
+    public float MasterVol;
     public float MusicVol;
     public int Resolution;
 }
@@ -27,6 +28,7 @@ public class Settings : MonoBehaviour
     public Slider renderScaleSlider;
     public Slider musicSlider;
     public Slider sfxSlider;
+    public Slider masterSlider;
 
     [Header("Dropdown")]
     public TMP_Dropdown graphicsTierSettings;
@@ -40,6 +42,7 @@ public class Settings : MonoBehaviour
     [Header("Mixers")]
     public AudioMixerGroup musicMixer;
     public AudioMixerGroup sfxMixer;
+    public AudioMixerGroup masterMixer;
 
     private Resolution[] resolutions;
     List<Resolution> selectedResolutionList = new List<Resolution>();
@@ -111,6 +114,7 @@ public class Settings : MonoBehaviour
         //Sounds
         musicMixer.audioMixer.SetFloat("Volume", musicSlider.value);
         sfxMixer.audioMixer.SetFloat("Volume", sfxSlider.value);
+        masterMixer.audioMixer.SetFloat("Volume", masterSlider.value);
 
         if (SaveOnUpdate)
             SavePlayerData();
@@ -129,7 +133,8 @@ public class Settings : MonoBehaviour
 
             //Sounds
             MusicVol = musicSlider.value,
-            SfxVol = sfxSlider.value
+            SfxVol = sfxSlider.value,
+            MasterVol = masterSlider.value
         };
 
         string Json = JsonUtility.ToJson(Save);
@@ -154,6 +159,8 @@ public class Settings : MonoBehaviour
         //Load sound data
         musicSlider.value = Save.MusicVol;
         sfxSlider.value = Save.SfxVol;
+        masterSlider.value = Save.MasterVol;
+
 
         UpdateSettings();
     }

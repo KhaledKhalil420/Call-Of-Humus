@@ -37,8 +37,9 @@ public class PlayerInventory : MonoBehaviour
 
     void UpdateUI()
     {
-        if (heldWeapon is Gun currentGun)
+        if (heldWeapon is Weapon currentGun)
         {
+            if(currentGun.runtimeData != null)
             ammoText.text = currentGun.runtimeData.currentAmmo + "/" + currentGun.maxAmmo.ToString();
         }
     }
@@ -52,23 +53,24 @@ public class PlayerInventory : MonoBehaviour
         // Shooting
         if (Input.GetMouseButton(0))
         {
-            heldWeapon.TriggerWeapon(PlayerLook.mainCamera.transform, animator, speedIncrease);
+            heldWeapon.TriggerWeapon(PlayerLook.mainCamera.transform, animator, speedIncrease, this);
         }
 
         if (Input.GetMouseButtonDown(0))
         {
-            heldWeapon.TriggerWeapon(PlayerLook.mainCamera.transform, animator, speedIncrease);
+            heldWeapon.TriggerWeapon(PlayerLook.mainCamera.transform, animator, speedIncrease, this);
         }
 
         if (Input.GetMouseButtonUp(0))
         {
-            heldWeapon.TriggerRelease(PlayerLook.mainCamera.transform, animator, speedIncrease);
+            heldWeapon.TriggerRelease(PlayerLook.mainCamera.transform, animator, speedIncrease, this);
         }
 
         // Reloading
-        if (Input.GetKeyDown(KeyCode.R) && heldWeapon is Gun gun)
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            StartCoroutine(ReloadWeaponCoroutine(gun));
+            if(heldWeapon is Weapon gun)
+                StartCoroutine(ReloadWeaponCoroutine(gun));
         }
 
         // Switching weapons
@@ -90,10 +92,10 @@ public class PlayerInventory : MonoBehaviour
         UpdateWeaponGraphically();
     }
 
-    IEnumerator ReloadWeaponCoroutine(Gun gun)
+    IEnumerator ReloadWeaponCoroutine(Weapon gun)
     {
         canShoot = false;
-        Transform holder = lastModel.transform.parent;
+        Transform holder = currentWeaponModel.transform.parent;
         float reloadTime = gun.reloadTime / speedIncrease;
         Vector3 originalPosition = holder.localPosition;
         Vector3 loweredPosition = originalPosition + Vector3.down * 3f;
@@ -147,15 +149,15 @@ public class PlayerInventory : MonoBehaviour
 
     #region Pew Pew Data
 
-    private GameObject lastModel;
+    internal GameObject currentWeaponModel;
     public void UpdateWeaponGraphically()
     {
-        if (lastModel != null) Destroy(lastModel);
+        if (currentWeaponModel != null) Destroy(currentWeaponModel);
 
         if (heldWeapon == null) return;
-        lastModel = Instantiate(heldWeapon.model, pivot);
-        lastModel.name = lastModel.name.Replace("(Clone)", "");
-        lastModel.layer = LayerMask.NameToLayer("Item");
+        currentWeaponModel = Instantiate(heldWeapon.model, pivot);
+        currentWeaponModel.name = currentWeaponModel.name.Replace("(Clone)", "");
+        currentWeaponModel.layer = LayerMask.NameToLayer("Item");
 
         animator.runtimeAnimatorController = heldWeapon.animator;
         StartCoroutine(UpdateAnimator());

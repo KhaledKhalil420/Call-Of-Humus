@@ -5,4 +5,6 @@ public class PurchasableItem : ScriptableObject
 {
     public Weapon weapon;
     public int price;
+
+    public string description;
 }

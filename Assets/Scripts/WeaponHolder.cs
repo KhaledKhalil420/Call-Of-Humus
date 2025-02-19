@@ -4,7 +4,7 @@ public class WeaponHolder : MonoBehaviour
 {
     public void TriggerThroughAnimation()
     {
-        PlayerInventory.instance.heldWeapon.TriggerAnimation(PlayerLook.mainCamera.transform, PlayerInventory.instance.animator, PlayerInventory.speedIncrease);
+        PlayerInventory.instance.heldWeapon.TriggerAnimation(PlayerLook.mainCamera.transform, PlayerInventory.instance.animator, PlayerInventory.speedIncrease, PlayerInventory.instance);
     }
 
     public void TriggerReload()

@@ -90,6 +90,8 @@ MonoBehaviour:
     headCollider: {fileID: 4507813450512701323}
     ballsCollider: {fileID: 2627765768454288097}
     showGizmos: 1
+    startSpeed: 6
+    randomizeSpeed: 1
   agent: {fileID: 437057710586922281}
   manager: {fileID: 0}
   attackRange: 1

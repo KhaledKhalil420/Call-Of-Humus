@@ -5,16 +5,17 @@ using UnityEngine.UI;
 public class ItemDisplay : MonoBehaviour
 {
     public Image image;
-    public TMP_Text text;
+    public TMP_Text text, descriptionText;
     internal bool canBuy = true;
     internal PurchasableItem purchasableItem;
 
     internal PlayerManager playerManager;
 
-    public void UpdateDisplay(Sprite sprite, string stringText)
+    public void UpdateDisplay(Sprite sprite, string stringText, string descriptionTetx)
     {
         image.sprite = sprite;
         text.text = stringText;
+        descriptionText.text = descriptionTetx;
     }
 
     public void Purchase()

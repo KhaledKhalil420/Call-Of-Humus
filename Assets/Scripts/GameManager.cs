@@ -39,8 +39,9 @@ public class GameManager : MonoBehaviour
         while (currentWaveIndex < waves.Count)
         {
             // Update GUI
-            gui.TriggerWaveText(currentWaveIndex.ToString() + 1);
-            gui.UpdateWaveText(currentWaveIndex.ToString() + 1);
+            gui.UpdateWaveText((currentWaveIndex + 1).ToString());
+            gui.TriggerWaveText((currentWaveIndex + 1).ToString());
+
 
             // Trigger wave start
             OnWaveTriggered?.Invoke(this, true);

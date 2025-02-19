@@ -1,4 +1,5 @@
 using System;
+using System.Dynamic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -20,6 +21,13 @@ public class ParentEnemyAI : MonoBehaviour, IDamagable
         {
             agent = GetComponent<NavMeshAgent>();
         }
+
+        if(settings.randomizeSpeed)
+        {
+            settings.startSpeed = UnityEngine.Random.Range(settings.startSpeed, settings.startSpeed * 1.3f);
+            agent.speed = settings.startSpeed;
+        }
+            
     }
 
     private void Update()
@@ -123,4 +131,8 @@ public class EnemySettings
 
     [Header("Debugging")]
     public bool showGizmos;
+
+    [Header("Seped")]
+    public float startSpeed;
+    public bool randomizeSpeed = false;
 }
