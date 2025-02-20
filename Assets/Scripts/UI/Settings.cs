@@ -100,7 +100,7 @@ public class Settings : MonoBehaviour
 
         //Render & Quality
         cam.farClipPlane = renderScaleSlider.value;
-        QualitySettings.SetQualityLevel(graphicsTierSettings.value);
+        QualitySettings.SetQualityLevel(graphicsTierSettings.value, true);
 
         if (selectedResolutionList != null && selectedResolutionList.Count > 0 && resolutionDropdown.options.Count > 0)
         {
