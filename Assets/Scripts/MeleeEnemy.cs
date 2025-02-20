@@ -20,7 +20,7 @@ public class MeleeEnemy : ParentEnemyAI
         StartCoroutine(AttackRoutine());
     }
 
-    public override void OnDeath()
+    public override void OnDeath(Collider collider)
     {
         // Use object pooling for death effect
         Instantiate(death, transform.position, transform.rotation);
@@ -73,7 +73,7 @@ public class MeleeEnemy : ParentEnemyAI
         canAttack = true;
     }
 
-    public override void OnDamage()
+    public override void OnDamage(Collider collider)
     {
         damagedAudio.pitch = Random.Range(0.75f, 1.1f);
         damagedAudio.Play();

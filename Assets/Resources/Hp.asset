@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9914ca1e5c1cb8e4cbf67d3e95b8184f, type: 3}
+  m_Name: Hp
+  m_EditorClassIdentifier: 
+  model: {fileID: 1100830148806886067, guid: fca82a17072375143a1c001890552ecb, type: 3}
+  animator: {fileID: 9100000, guid: bdeae88a46b368a4f8de33adee5f8f37, type: 2}
+  allLayers:
+    serializedVersion: 2
+    m_Bits: 7679
+  itemName: Pistol
+  sprite: {fileID: 192748073, guid: 51046d7341b9bcc45add8b62873ace0a, type: 3}
+  damage: 40
+  range: 450
+  bulletsPerShot: 1
+  spray: 0
+  shootCooldown: 0.7
+  reloadTime: 0.75
+  maxAmmo: 15
+  particles: {fileID: 4837796100309896629, guid: 1f16b8d8a28b44644ae2a4fbc53e3ca0, type: 3}
+  shakeSettings:
+    magnitude: 15
+    roughness: 1
+    fadeIn: 0.1
+    fadeOut: 0.2
+  shootSound: Revolver_Shot
+  reloadSound: Gun_Reload
+  penetratingShots: 1
+  maxPenetrations: 15
+  sprayIncreaseRate: 5

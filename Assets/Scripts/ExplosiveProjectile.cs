@@ -47,7 +47,18 @@ public class ExplosiveProjectile : MonoBehaviour
         {
             if (hit.TryGetComponent(out IDamagable damagable))
             {
+                if(!hit.CompareTag("Player"))
                 damagable.Damage(explosionDamage, GetComponent<Collider>(), knockbackForce);
+
+                else
+                {
+                    PlayerHealth playerHealth = hit.GetComponent<PlayerHealth>();
+                    if(!playerHealth.isImmuneToExplosions)
+                    damagable.Damage(hit.GetComponent<PlayerHealth>().currentHp / 2, GetComponent<Collider>(), knockbackForce);
+
+                    else
+                    damagable.Damage(0, GetComponent<Collider>(), knockbackForce);
+                }
             }
         }
         

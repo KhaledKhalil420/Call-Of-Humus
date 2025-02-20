@@ -22,7 +22,7 @@ MonoBehaviour:
   damage: 5
   range: 450
   bulletsPerShot: 1
-  spray: 0.01
+  spray: 0.025
   shootCooldown: 0.3
   reloadTime: 0.5
   maxAmmo: 15
@@ -34,3 +34,6 @@ MonoBehaviour:
     fadeOut: 0.2
   shootSound: Pistol_Shoot
   reloadSound: Gun_Reload
+  penetratingShots: 0
+  maxPenetrations: 5
+  sprayIncreaseRate: 5

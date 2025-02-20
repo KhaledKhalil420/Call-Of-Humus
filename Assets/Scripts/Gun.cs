@@ -22,7 +22,6 @@ public class Gun : Weapon
             if (canShoot)
             {
                 currentSpray = Mathf.Min(currentSpray + sprayIncreaseRate * Time.deltaTime, spray);
-                Debug.Log($"Spray: {currentSpray:F4}, Max: {spray:F4}");
 
                 for (int i = 0; i < bulletsPerShot; i++)
                 {
@@ -41,7 +40,6 @@ public class Gun : Weapon
     public override void TriggerRelease(Transform cam, Animator anim, float speedIncrease, PlayerInventory inventory)
     {
         currentSpray = 0f;
-        Debug.Log($"Spray Reset on Release: {currentSpray:F4}");
     }
 
     public IEnumerator GetReadyToShoot()

@@ -277,7 +277,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7289612636298257194}
         m_TargetAssemblyTypeName: ItemDisplay, Assembly-CSharp
-        m_MethodName: Purchase
+        m_MethodName: Trigger
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

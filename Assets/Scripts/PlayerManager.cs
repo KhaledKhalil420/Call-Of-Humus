@@ -18,7 +18,7 @@ public class PlayerManager : MonoBehaviour
 
     public GUI gui;
 
-    public Gun[] guns;
+    public Weapon[] guns;
     public Animator hitMarkerAniamtor;
     public Transform deathScreen;
     public TMP_Text wavesSurvived;
@@ -115,7 +115,7 @@ public class PlayerManager : MonoBehaviour
 
         Debug.Log(GetClosestPlayer(transform.position).name);
 
-        guns = Resources.LoadAll<Gun>("");
+        guns = Resources.LoadAll<Weapon>("");
         Array.ForEach(guns, gun => gun.InitializeRuntimeData());
     }
 

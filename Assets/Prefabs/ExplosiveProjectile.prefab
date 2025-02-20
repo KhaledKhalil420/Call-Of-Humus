@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31b412ca39bab7844b808530043e9431, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionRadius: 5
+  explosionRadius: 7
   explosionDamage: 50
   knockbackForce: 10
   explosionEffect: {fileID: 6893373552573207655, guid: 6aa5fcb1f31bbbd4c8313e38925cecb4, type: 3}

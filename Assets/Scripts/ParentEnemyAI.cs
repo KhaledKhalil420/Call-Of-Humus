@@ -73,29 +73,29 @@ public class ParentEnemyAI : MonoBehaviour, IDamagable
             AudioManager.instance.PlaySound("Enemy_Damage");
         }
 
+
+        OnDamage(collider);
+
         // Trigger death if health is depleted
         if (settings.health <= 0)
         {
             isDead = true;
             manager.spawnedEnemies--;
             PlayerManager.instance.ChangeMoney(settings.pointWorth);
-            OnDeath();
+            OnDeath(collider);
         }
-
-        OnDamage();
     }
 
     #endregion
 
     #region Children Methods
 
-    public virtual void OnDamage()
+    public virtual void OnDamage(Collider collider)
     {
     }
 
-    public virtual void OnDeath()
+    public virtual void OnDeath(Collider collider)
     {
-        Destroy(gameObject);
     }
 
     public virtual void UpdateF()

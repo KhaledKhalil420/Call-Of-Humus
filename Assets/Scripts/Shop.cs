@@ -62,6 +62,7 @@ public class Shop : MonoBehaviour, IInteractable
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             PauseMenu.instance.parent.gameObject.SetActive(false);
+            parent.gameObject.SetActive(false);
         }
     }
 

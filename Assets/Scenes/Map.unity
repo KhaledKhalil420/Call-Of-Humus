@@ -23786,10 +23786,7 @@ MonoBehaviour:
   heldWeapon: {fileID: 11400000, guid: ede7cc6f16ccc254c99e9ee3d4577372, type: 2}
   storedWeapons:
   - {fileID: 11400000, guid: ede7cc6f16ccc254c99e9ee3d4577372, type: 2}
-  - {fileID: 11400000, guid: 009820649d3336541a7a25999f1ab7e3, type: 2}
   - {fileID: 11400000, guid: 8c58d517c1b1442499f467d2b11ae4a8, type: 2}
-  - {fileID: 11400000, guid: 41e0cf79677a1aa48b308c04b7e6e164, type: 2}
-  - {fileID: 11400000, guid: 898bd540ff96d5744866635fc5795f9d, type: 2}
   pivot: {fileID: 19325973}
   animator: {fileID: 566712691}
   canShoot: 1
@@ -24109,7 +24106,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1168095819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24138,7 +24135,7 @@ MonoBehaviour:
     - {fileID: 690338516}
     - {fileID: 195272531}
     enemiesToSpawn: 30
-    spawnSpeed: 0.5
+    spawnSpeed: 1
   - enemies:
     - {fileID: 4492381233360529906, guid: 2d8827a054892b84697ebf421def0671, type: 3}
     spawnPoints:
@@ -24146,7 +24143,7 @@ MonoBehaviour:
     - {fileID: 690338516}
     - {fileID: 195272531}
     enemiesToSpawn: 60
-    spawnSpeed: 0.3
+    spawnSpeed: 0.7
   - enemies:
     - {fileID: 4492381233360529906, guid: 2d8827a054892b84697ebf421def0671, type: 3}
     spawnPoints:
@@ -24154,7 +24151,7 @@ MonoBehaviour:
     - {fileID: 690338516}
     - {fileID: 195272531}
     enemiesToSpawn: 80
-    spawnSpeed: 0.2
+    spawnSpeed: 0.7
   - enemies:
     - {fileID: 7426365224888191725, guid: bf796f55af75b014e80159fccabbf0cb, type: 3}
     spawnPoints:
@@ -24165,23 +24162,6 @@ MonoBehaviour:
     spawnSpeed: 1
   - enemies:
     - {fileID: 7426365224888191725, guid: bf796f55af75b014e80159fccabbf0cb, type: 3}
-    spawnPoints:
-    - {fileID: 322007109}
-    - {fileID: 690338516}
-    - {fileID: 195272531}
-    enemiesToSpawn: 80
-    spawnSpeed: 1
-  - enemies:
-    - {fileID: 7426365224888191725, guid: bf796f55af75b014e80159fccabbf0cb, type: 3}
-    - {fileID: 4492381233360529906, guid: 2d8827a054892b84697ebf421def0671, type: 3}
-    spawnPoints:
-    - {fileID: 322007109}
-    - {fileID: 690338516}
-    - {fileID: 195272531}
-    enemiesToSpawn: 45
-    spawnSpeed: 1
-  - enemies:
-    - {fileID: 7426365224888191725, guid: bf796f55af75b014e80159fccabbf0cb, type: 3}
     - {fileID: 4492381233360529906, guid: 2d8827a054892b84697ebf421def0671, type: 3}
     spawnPoints:
     - {fileID: 322007109}
@@ -24196,7 +24176,25 @@ MonoBehaviour:
     - {fileID: 322007109}
     - {fileID: 690338516}
     - {fileID: 195272531}
-    enemiesToSpawn: 80
+    enemiesToSpawn: 85
+    spawnSpeed: 0.8
+  - enemies:
+    - {fileID: 7426365224888191725, guid: bf796f55af75b014e80159fccabbf0cb, type: 3}
+    - {fileID: 4492381233360529906, guid: 2d8827a054892b84697ebf421def0671, type: 3}
+    spawnPoints:
+    - {fileID: 322007109}
+    - {fileID: 690338516}
+    - {fileID: 195272531}
+    enemiesToSpawn: 100
+    spawnSpeed: 1
+  - enemies:
+    - {fileID: 7426365224888191725, guid: bf796f55af75b014e80159fccabbf0cb, type: 3}
+    - {fileID: 4492381233360529906, guid: 2d8827a054892b84697ebf421def0671, type: 3}
+    spawnPoints:
+    - {fileID: 322007109}
+    - {fileID: 690338516}
+    - {fileID: 195272531}
+    enemiesToSpawn: 110
     spawnSpeed: 1
   - enemies:
     - {fileID: 7426365224888191725, guid: bf796f55af75b014e80159fccabbf0cb, type: 3}
@@ -24216,9 +24214,56 @@ MonoBehaviour:
     - {fileID: 195272531}
     enemiesToSpawn: 120
     spawnSpeed: 0.3
+  - enemies:
+    - {fileID: 4492381233360529906, guid: 2d8827a054892b84697ebf421def0671, type: 3}
+    - {fileID: 6401596589602344699, guid: c1802a317e067764f8e0d6059a182117, type: 3}
+    spawnPoints:
+    - {fileID: 322007109}
+    - {fileID: 690338516}
+    - {fileID: 195272531}
+    enemiesToSpawn: 35
+    spawnSpeed: 1
+  - enemies:
+    - {fileID: 4492381233360529906, guid: 2d8827a054892b84697ebf421def0671, type: 3}
+    - {fileID: 6401596589602344699, guid: c1802a317e067764f8e0d6059a182117, type: 3}
+    spawnPoints:
+    - {fileID: 322007109}
+    - {fileID: 690338516}
+    - {fileID: 195272531}
+    enemiesToSpawn: 65
+    spawnSpeed: 1
+  - enemies:
+    - {fileID: 7426365224888191725, guid: bf796f55af75b014e80159fccabbf0cb, type: 3}
+    - {fileID: 4492381233360529906, guid: 2d8827a054892b84697ebf421def0671, type: 3}
+    - {fileID: 6401596589602344699, guid: c1802a317e067764f8e0d6059a182117, type: 3}
+    spawnPoints:
+    - {fileID: 322007109}
+    - {fileID: 690338516}
+    - {fileID: 195272531}
+    enemiesToSpawn: 80
+    spawnSpeed: 1
+  - enemies:
+    - {fileID: 7426365224888191725, guid: bf796f55af75b014e80159fccabbf0cb, type: 3}
+    - {fileID: 4492381233360529906, guid: 2d8827a054892b84697ebf421def0671, type: 3}
+    - {fileID: 6401596589602344699, guid: c1802a317e067764f8e0d6059a182117, type: 3}
+    spawnPoints:
+    - {fileID: 322007109}
+    - {fileID: 690338516}
+    - {fileID: 195272531}
+    enemiesToSpawn: 100
+    spawnSpeed: 1
+  - enemies:
+    - {fileID: 7426365224888191725, guid: bf796f55af75b014e80159fccabbf0cb, type: 3}
+    - {fileID: 4492381233360529906, guid: 2d8827a054892b84697ebf421def0671, type: 3}
+    - {fileID: 6401596589602344699, guid: c1802a317e067764f8e0d6059a182117, type: 3}
+    spawnPoints:
+    - {fileID: 322007109}
+    - {fileID: 690338516}
+    - {fileID: 195272531}
+    enemiesToSpawn: 100
+    spawnSpeed: 0.9
   waveBreak: 15
   spawnedEnemies: 0
-  loopWaves: 1
   gui: {fileID: 1032209028}
 --- !u!114 &1168095820
 MonoBehaviour:
@@ -24268,8 +24313,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 8d9e317333fdd314f9a03c556afc9208, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 8996e18b744d66647a4ac14bbad9c2d1, type: 3}
-  m_Resource: {fileID: 8300000, guid: 8996e18b744d66647a4ac14bbad9c2d1, type: 3}
+  m_audioClip: {fileID: 8300000, guid: df2f46da33a6eff418814a10fe417d87, type: 3}
+  m_Resource: {fileID: 8300000, guid: df2f46da33a6eff418814a10fe417d87, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0
   m_Pitch: 1
@@ -24365,8 +24410,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 8d9e317333fdd314f9a03c556afc9208, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 67e04f350729833429a65187f51aa482, type: 3}
-  m_Resource: {fileID: 8300000, guid: 67e04f350729833429a65187f51aa482, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3c040d2e8a0670f478413364f484e044, type: 3}
+  m_Resource: {fileID: 8300000, guid: 3c040d2e8a0670f478413364f484e044, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0
   m_Pitch: 1

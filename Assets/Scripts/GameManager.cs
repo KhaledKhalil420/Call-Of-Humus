@@ -16,8 +16,6 @@ public class GameManager : MonoBehaviour
 
     internal int currentWaveIndex = 0;
 
-    public bool loopWaves = false;
-
     public GUI gui;
 
     private void Start()
@@ -38,10 +36,9 @@ public class GameManager : MonoBehaviour
     {
         while (currentWaveIndex < waves.Count)
         {
-            // Update GUI
+            // Update GUI with increasing wave number
             gui.UpdateWaveText((currentWaveIndex + 1).ToString());
             gui.TriggerWaveText((currentWaveIndex + 1).ToString());
-
 
             // Trigger wave start
             OnWaveTriggered?.Invoke(this, true);
@@ -54,23 +51,27 @@ public class GameManager : MonoBehaviour
 
             // Trigger wave end
             OnWaveTriggered?.Invoke(this, false);
+            
+            // Check if this was the last wave
+            if (currentWaveIndex == waves.Count - 1)
+            {
+                // Final wave completed - keep the last wave number showing
+                int finalWaveNumber = waves.Count;
+                gui.UpdateWaveText(finalWaveNumber.ToString());
+                gui.TriggerWaveText(finalWaveNumber.ToString());
+                Debug.Log("All waves completed! Game Over!");
+                yield break; // Exit the coroutine
+            }
+
             currentWaveIndex++;
 
-            // Wave break before next wave
-            gui.UpdateWaveText("Survived");
-            gui.TriggerWaveText("Survived");
+            // Wave break before next wave, still showing the completed wave number
+            gui.UpdateWaveText((currentWaveIndex).ToString());
+            gui.TriggerWaveText((currentWaveIndex).ToString());
             Debug.Log("Wave break!");
 
             yield return new WaitForSeconds(waveBreak);
         }
-
-        if(loopWaves)
-        {
-            currentWaveIndex = 0;
-            StartCoroutine(WaveLogic());
-        }
-
-        Debug.Log("All waves completed!");
     }
 
     IEnumerator SpawnWave(Wave wave)

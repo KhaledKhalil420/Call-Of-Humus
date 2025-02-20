@@ -12,7 +12,8 @@ public class PlayerHealth : MonoBehaviour, IDamagable
 
     [Header("Hp")]
     public float maxHp;
-    private float currentHp;
+    internal float currentHp;
+    internal bool isImmuneToExplosions = false;
 
     [Header("Regeneration")]
     public float regenTime;

@@ -7,4 +7,11 @@ public class PurchasableItem : ScriptableObject
     public int price;
 
     public string description;
+
+    public enum PurchasableItemType
+    {
+        Hp, Weapon, ExplosionsImmunity
+    }
+
+    public PurchasableItemType type = PurchasableItemType.Weapon;
 }
