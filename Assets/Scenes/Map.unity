@@ -7495,6 +7495,7 @@ GameObject:
   - component: {fileID: 139835309}
   - component: {fileID: 139835310}
   - component: {fileID: 139835311}
+  - component: {fileID: 139835312}
   m_Layer: 5
   m_Name: Transition
   m_TagString: Untagged
@@ -7556,6 +7557,19 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &139835312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139835308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 189c6865859089144a8ef5c789d33020, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
 --- !u!1001 &144694293
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24787,6 +24801,7 @@ MonoBehaviour:
   waveBreak: 15
   spawnedEnemies: 0
   gui: {fileID: 1032209028}
+  endingAnim: {fileID: 139835310}
 --- !u!114 &1168095820
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,11 +12,13 @@ public class GameManager : MonoBehaviour
     public float waveBreak = 5f;
 
     public event EventHandler<bool> OnWaveTriggered;
+    public event Action OnAfterFinalWave;
     public int spawnedEnemies;
 
     internal int currentWaveIndex = 0;
 
     public GUI gui;
+    public Animator endingAnim;
 
     private void Start()
     {
@@ -72,15 +74,17 @@ public class GameManager : MonoBehaviour
             // Trigger wave end
             OnWaveTriggered?.Invoke(this, false);
             
-            // Check if this was the last wave
             if (currentWaveIndex == waves.Count - 1)
             {
                 // Final wave completed - keep the last wave number showing
                 int finalWaveNumber = waves.Count;
                 gui.UpdateWaveText(finalWaveNumber.ToString());
                 gui.TriggerWaveText(finalWaveNumber.ToString());
-                Debug.Log("All waves completed! Game Over!");
-                yield break; // Exit the coroutine
+                yield return new WaitForSeconds(waveBreak);
+
+                endingAnim.Play("Ending");
+                
+                yield break;
             }
 
             currentWaveIndex++;
