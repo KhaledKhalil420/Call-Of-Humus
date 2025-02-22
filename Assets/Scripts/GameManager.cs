@@ -30,6 +30,26 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+
+        if(Input.GetKeyDown(KeyCode.LeftBracket))
+        {
+            SkipCurrentWave();
+        }
+    }
+
+    private void SkipCurrentWave()
+    {
+        if (currentWaveIndex >= waves.Count) return;
+        
+        StopAllCoroutines();
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach(GameObject enemy in enemies)
+        {
+            Destroy(enemy);
+        }
+        spawnedEnemies = 0;
+        currentWaveIndex++;
+        StartCoroutine(WaveLogic());
     }
 
     IEnumerator WaveLogic()
@@ -66,8 +86,8 @@ public class GameManager : MonoBehaviour
             currentWaveIndex++;
 
             // Wave break before next wave, still showing the completed wave number
-            gui.UpdateWaveText((currentWaveIndex).ToString());
-            gui.TriggerWaveText((currentWaveIndex).ToString());
+            gui.UpdateWaveText(currentWaveIndex.ToString());
+            gui.TriggerWaveText(currentWaveIndex.ToString());
             Debug.Log("Wave break!");
 
             yield return new WaitForSeconds(waveBreak);

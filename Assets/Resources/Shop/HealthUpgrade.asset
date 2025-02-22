@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: HealthUpgrade
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: 0a6580b89c1bbe843896552f5e45eac0, type: 2}
-  price: 1000
+  price: 5000
   description: Get 50% More Health
   type: 0

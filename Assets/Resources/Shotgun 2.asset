@@ -16,7 +16,7 @@ MonoBehaviour:
   animator: {fileID: 9100000, guid: 4ebb1f96a90a6f04880eb743a14e7b39, type: 2}
   allLayers:
     serializedVersion: 2
-    m_Bits: 5631
+    m_Bits: 5599
   itemName: Shotgun
   sprite: {fileID: 21300000, guid: e9754da09cb21b84eb80ddc83ed8140e, type: 3}
   damage: 2
@@ -34,3 +34,6 @@ MonoBehaviour:
     fadeOut: 0.1
   shootSound: Shotgun_Shoot
   reloadSound: Gun_Reload
+  penetratingShots: 0
+  maxPenetrations: 5
+  sprayIncreaseRate: 5

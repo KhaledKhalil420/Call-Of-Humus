@@ -23,16 +23,12 @@ public class PlayerInventory : MonoBehaviour
         instance = this;
         UpdateWeaponGraphically();
     }
-    
-    private void FixedUpdate()
-    {
-        Interact();
-    }
 
     private void LateUpdate()
     {
         Inputs();
         UpdateUI();
+        Interact();
     }
 
     void UpdateUI()

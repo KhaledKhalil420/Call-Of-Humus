@@ -49,7 +49,19 @@ public class OsamaEnemy : ParentEnemyAI
         {
             if (hit.TryGetComponent(out IDamagable damagable))
             {
-                damagable.Damage(40, GetComponent<Collider>(), 0);
+                
+                if(!hit.CompareTag("Player"))
+                damagable.Damage(450, GetComponent<Collider>(), 0);
+
+                else
+                {
+                    PlayerHealth playerHealth = hit.GetComponent<PlayerHealth>();
+                    if(!playerHealth.isImmuneToExplosions)
+                    damagable.Damage(hit.GetComponent<PlayerHealth>().currentHp / 2, GetComponent<Collider>(), 0);
+
+                    else
+                    damagable.Damage(0, GetComponent<Collider>(), 0);
+                }
             }
         }
 

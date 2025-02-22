@@ -58,11 +58,12 @@ public class Shop : MonoBehaviour, IInteractable
         if(isUsing)
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            PlayerManager.instance.UnlockPlayer();
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            PauseMenu.instance.isPaused = false;
             PauseMenu.instance.parent.gameObject.SetActive(false);
+            PauseMenu.instance.ResumeGame();
             parent.gameObject.SetActive(false);
+
+            isUsing = false;
         }
     }
 
