@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Ak 47
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: 898bd540ff96d5744866635fc5795f9d, type: 2}
-  price: 1000
+  price: 900
   description: Fast, Reliable, Cheap .. What more can you want?
+  type: 1

@@ -127,8 +127,16 @@ public class GameManager : MonoBehaviour
         // Spawn the enemy
         GameObject enemy = Instantiate(chosenEnemy, positionSpawn.position, positionSpawn.rotation);
 
-        // Assign GameManager to the spawned enemy
-        enemy.GetComponent<ParentEnemyAI>().manager = this;
+        // Check if the enemy has the ParentEnemyAI component before assigning
+        ParentEnemyAI enemyAI = enemy.GetComponent<ParentEnemyAI>();
+        if (enemyAI != null)
+        {
+            enemyAI.manager = this;
+        }
+        else
+        {
+            Debug.LogWarning("Enemy " + enemy.name + " is missing ParentEnemyAI component!");
+        }
     }
 }
 

@@ -24,7 +24,7 @@ MonoBehaviour:
   bulletsPerShot: 0
   spray: 0
   shootCooldown: 1
-  reloadTime: 2
+  reloadTime: 1
   maxAmmo: 1
   particles: {fileID: 0}
   shakeSettings:

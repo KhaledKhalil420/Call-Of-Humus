@@ -9,6 +9,7 @@ public class PlayerInventory : MonoBehaviour
 
     public Weapon heldWeapon;
     public List<Weapon> storedWeapons;
+    private int currentWeaponIndex = 0;
 
     public Transform pivot;
     public Animator animator;
@@ -69,7 +70,7 @@ public class PlayerInventory : MonoBehaviour
                 StartCoroutine(ReloadWeaponCoroutine(gun));
         }
 
-        // Switching weapons
+        // Switching weapons with number keys
         for (int i = 1; i <= storedWeapons.Count; i++)
         {
             if (Input.GetKeyDown(i.ToString()))
@@ -78,17 +79,37 @@ public class PlayerInventory : MonoBehaviour
                 SwitchWeapon(i - 1);
             }
         }
+
+        // Switching weapons with scroll wheel
+        float scrollInput = Input.GetAxis("Mouse ScrollWheel");
+        if (scrollInput != 0 && storedWeapons.Count > 0)
+        {
+            if (scrollInput > 0)
+            {
+                // Scroll up - next weapon
+                currentWeaponIndex = (currentWeaponIndex + 1) % storedWeapons.Count;
+            }
+            else
+            {
+                // Scroll down - previous weapon
+                currentWeaponIndex = (currentWeaponIndex - 1 + storedWeapons.Count) % storedWeapons.Count;
+            }
+            
+            AudioManager.instance.PlaySound("Switch_Weapon", 1, 1.2f);
+            SwitchWeapon(currentWeaponIndex);
+        }
     }
 
     void SwitchWeapon(int index)
     {
         if (index < 0 || index >= storedWeapons.Count) return;
 
+        currentWeaponIndex = index;
         heldWeapon = storedWeapons[index];
         UpdateWeaponGraphically();
     }
 
-    IEnumerator ReloadWeaponCoroutine(Weapon gun)
+    public IEnumerator ReloadWeaponCoroutine(Weapon gun)
     {
         canShoot = false;
         Transform holder = currentWeaponModel.transform.parent;

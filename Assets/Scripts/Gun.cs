@@ -35,6 +35,11 @@ public class Gun : Weapon
                 CoroutineRunner.Coroutines.StartCoroutine(GetReadyToShoot());
             }
         }
+
+        else if(!runtimeData.isReloading && runtimeData.currentAmmo <= 0)
+        {
+            CoroutineRunner.Coroutines.StartCoroutine(inventory.ReloadWeaponCoroutine(this));
+        }
     }
 
     public override void TriggerRelease(Transform cam, Animator anim, float speedIncrease, PlayerInventory inventory)

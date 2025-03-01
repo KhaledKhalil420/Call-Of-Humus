@@ -59,7 +59,8 @@ public class ItemDisplay : MonoBehaviour
             playerManager.ChangeMoney(-purchasableItem.price);
             
             AudioManager.instance.PlaySound("Buy", 1, 1.1f);
-            PlayerInventory .instance.GetComponent<PlayerHealth>().maxHp *= 1.5f;
+            PlayerInventory.instance.GetComponent<PlayerHealth>().maxHp *= 1.5f;
+            PlayerInventory.instance.GetComponent<PlayerHealth>().regenspeed *= 1.25f;
         }        
     }
 

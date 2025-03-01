@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ExplosionsUpgrade
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: 0f1c543dbfb7cfe4badb229cfbf21fa7, type: 2}
-  price: 1500
+  price: 1300
   description: Become Immune to Explosions
   type: 2

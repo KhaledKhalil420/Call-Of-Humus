@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Combat Shotgun
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: 41e0cf79677a1aa48b308c04b7e6e164, type: 2}
-  price: 1500
+  price: 1800
   description: Shoots multiple bullets per shot, like any normal shotgun
+  type: 1

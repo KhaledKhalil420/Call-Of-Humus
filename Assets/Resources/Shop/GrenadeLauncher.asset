@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: GrenadeLauncher
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: 8c58d517c1b1442499f467d2b11ae4a8, type: 2}
-  price: 3500
+  price: 3700
   description: Goes BOOM when fired
+  type: 1
